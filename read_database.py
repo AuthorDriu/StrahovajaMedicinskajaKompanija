@@ -28,7 +28,7 @@ def partner():
     inn = input("Укажите ИНН: ")
     partners_database = database.read(database.PARTNERS)
     partner = partners_database.get(inn, None)
-    if client is None:
+    if partner is None:
         print("Нет такой организации")
         return
     print(f"ИНН: {inn}\nНазвание: {partner['name']}\nУслуги {partner['services']}")

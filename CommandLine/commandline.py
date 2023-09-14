@@ -37,11 +37,12 @@ class User:
         self.is_running = True
         try:
             while self.is_running:
-                command = input(f"[{self.__username}] ")
+                command = input(f"\n[{self.__username}] ")
                 command_to_exec = self.__command_dict.get(command.lower(), None)
                 if command_to_exec is None:
                     print(f"Команды {command} не существует!")
                     continue
+                print("==============")
                 command_to_exec()
         except KeyboardInterrupt:
             print("Выход из пользователя...")
@@ -105,11 +106,12 @@ class CommandLine:
         print(self.__message)
         try:
             while self.is_running:
-                command = input(self.__prefix)
+                command = input("\n"+self.__prefix)
                 command_to_exec = self.__command_dict.get(command.lower(), None)
                 if command_to_exec is None:
                     print(f"Команды {command} не существует!")
                     continue
+                print("==============")
                 command_to_exec()
         except KeyboardInterrupt:
             print("Выход из терминала...")
