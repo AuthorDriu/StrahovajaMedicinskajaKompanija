@@ -24,5 +24,6 @@ command_line.add_user("Инспектор", "Инспектор")
 command_line.get_user("Инспектор").add("инфо пользователь", read_database.client, "Посмотреть информацию о пользователе")
 command_line.get_user("Инспектор").add("инфо партнёр", read_database.partner, "Посмотреть информацию о партнёре")
 command_line.get_user("Инспектор").add("инфо договор", read_database.contract, "Посмотреть информацию о договоре")
+command_line.get_user("Инспектор").add("список", read_database.get_list, "Посмотреть список записей в таблице")
 
 command_line.run()
